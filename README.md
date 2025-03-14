@@ -22,6 +22,7 @@ This section outlines the processes in installing and checking on Network Activi
 <h2>List of Prerequisites</h2>
 
 - WireShark
+- PowerShell
 
 
   
