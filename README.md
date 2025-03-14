@@ -35,11 +35,12 @@ This section outlines the processes in installing and checking on Network Activi
 
 </p>
 <p>
--Connect to Windows 10 VM: Use Remote Desktop to access your Windows 10 Virtual Machine.
--Install Wireshark: Download and install Wireshark within your Windows 10 VM.
--Start Packet Capture: Open Wireshark, select your active network interface, and start packet capture.
--Filter for ICMP Traffic: In the Wireshark filter bar, enter icmp and press Enter to display only ICMP traffic.
--Ping Ubuntu VM: Retrieve the private IP of your Ubuntu VM (Linux-VM) and initiate a ping from Windows 10 VM using: ping <10.0.0.5>
+  
+  - Connect to Windows 10 VM: Use Remote Desktop to access your Windows 10 Virtual Machine.
+  - Install Wireshark: Download and install Wireshark within your Windows 10 VM.
+  - Start Packet Capture: Open Wireshark, select your active network interface, and start packet capture.
+  - Filter for ICMP Traffic: In the Wireshark filter bar, enter icmp and press Enter to display only ICMP traffic.
+  - Ping Ubuntu VM: Retrieve the private IP of your Ubuntu VM (Linux-VM) and initiate a ping from Windows 10 VM using: ping <10.0.0.5>
   
 </p>
 <br />
@@ -57,19 +58,20 @@ This section outlines the processes in installing and checking on Network Activi
 
 
 <p>
-Initiate a Continuous Ping: Start a continuous ping from the Windows 10 VM in Powershell to the Ubuntu VM to observe traffic in real-time:
+
+  - Initiate a Continuous Ping: Start a continuous ping from the Windows 10 VM in Powershell to the Ubuntu VM to observe traffic in real-time:
 ping <10.0.0.5> -t
-Modify the Network Security Group (NSG) through Azure:
-Locate the inbound rules and disable ICMP (ping) traffic by blocking ICMP packets.
-Observe Changes in Wireshark & Ping Output:
-In Wireshark, notice that ICMP requests are sent, but there are no replies.
-In the Command Prompt/PowerShell, you should see Request Timed Out messages.
-Re-enable ICMP Traffic:
-Go back to the Ubuntu VM's NSG and allow inbound ICMP traffic again.
-Verify ICMP is Working Again:
-In Wireshark, you should now see ICMP replies appearing again.
-In Command Prompt/PowerShell, the ping responses should resume.
-Stop Ping Activity: Use Ctrl + C to stop the ongoing ping test.
+  - Modify the Network Security Group (NSG) through Azure:
+  - Locate the inbound rules and disable ICMP (ping) traffic by blocking ICMP packets.
+  - Observe Changes in Wireshark & Ping Output:
+  - In Wireshark, notice that ICMP requests are sent, but there are no replies.
+  - In the Command Prompt/PowerShell, you should see Request Timed Out messages.
+  - Re-enable ICMP Traffic:
+  - Go back to the Ubuntu VM's NSG and allow inbound ICMP traffic again.
+  - Verify ICMP is Working Again:
+  - In Wireshark, you should now see ICMP replies appearing again.
+  - In Command Prompt/PowerShell, the ping responses should resume.
+  - Stop Ping Activity: Use Ctrl + C to stop the ongoing ping test.
 </p>
 <br />
 
@@ -78,8 +80,6 @@ Stop Ping Activity: Use Ctrl + C to stop the ongoing ping test.
 <h2>Step 3: Observing the Traffic of Protocols</h2>
 
 ![NSG7](https://github.com/user-attachments/assets/e160d5ed-b661-42d7-8624-588926338106)
-
-
 
 <p>
 To observe SSH traffic in Wireshark, start a packet capture on your Windows VM and filter for SSH traffic (tcp.port == 22). Open PowerShell and initiate an SSH connection to your Ubuntu VM using its private IP: ssh labuser@ <privateIPaddress>, then enter your credentials. As you type commands, observe the SSH packets appearing in Wireshark. To end the session, type exit and press Enter, stopping the SSH traffic.
