@@ -82,7 +82,7 @@ Stop Ping Activity: Use Ctrl + C to stop the ongoing ping test.
 
 
 <p>
-inaert here
+To observe SSH traffic in Wireshark, start a packet capture on your Windows VM and filter for SSH traffic (tcp.port == 22). Open PowerShell and initiate an SSH connection to your Ubuntu VM using its private IP: ssh labuser@ <privateIPaddress>, then enter your credentials. As you type commands, observe the SSH packets appearing in Wireshark. To end the session, type exit and press Enter, stopping the SSH traffic.
 </p>
 <br />
 
@@ -93,7 +93,7 @@ inaert here
 
 </p>
 <p>
-para here
+To observe DHCP traffic in Wireshark, start a packet capture on your Windows VM and filter for DHCP traffic (udp.port == 67 || udp.port == 68). Open PowerShell as admin and run a script: ipconfig /release followed by ipconfig /renew to request a new IP address. Watch the DHCP packets appear in Wireshark as the VM communicates with the DHCP server.
 </p>
 <br />
 
@@ -103,7 +103,7 @@ para here
 
 </p>
 <p>
-para here
+To observe DNS traffic in Wireshark, start a packet capture on your Windows VM and filter for DNS traffic (tcp.port == 53). Open PowerShell and run nslookup Nike.com and nslookup Amazon.com to query their IP addresses. Watch the DNS request and response packets appear in Wireshark.
 </p>
 <br />
 
@@ -111,6 +111,6 @@ para here
 
 </p>
 <p>
-para here
+To observe RDP traffic in Wireshark, start a packet capture on your Windows VM and filter for RDP traffic (tcp.port == 3389). Notice the continuous stream of packets even when idle. This occurs because RDP constantly transmits data to maintain a live stream between computers, ensuring a smooth remote session.
 </p>
 <br />
