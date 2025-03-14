@@ -25,7 +25,7 @@ This section outlines the processes in installing and checking on Network Activi
 
 
   
-<h2>Steps</h2>
+<h2>Step 1: Observing ICMP Traffic</h2>
 
 <p>
 
@@ -47,11 +47,13 @@ This section outlines the processes in installing and checking on Network Activi
 
 ![NSG4](https://github.com/user-attachments/assets/dbccb7d8-841a-4d26-b8c7-627703764ec5)
 
+<h2>Step 2: Configuring a Firewall (Network Security Group) to Block ICMP Traffic</h2>
+
 ![NSG5-5](https://github.com/user-attachments/assets/ccd60c94-7686-46b4-9c20-bd4a9f0b6075)
 
 </p>
 
-<h2>Step 2: Configuring a Firewall (Network Security Group) to Block ICMP Traffic</h2>
+
 
 <p>
 Initiate a Continuous Ping: Start a continuous ping from the Windows 10 VM in Powershell to the Ubuntu VM to observe traffic in real-time:
@@ -72,6 +74,7 @@ Stop Ping Activity: Use Ctrl + C to stop the ongoing ping test.
 
 <p>
 
+<h2>Step 3: Observing the Traffic of Protocols</h2>
 
 ![NSG7](https://github.com/user-attachments/assets/e160d5ed-b661-42d7-8624-588926338106)
 
@@ -104,3 +107,9 @@ para here
 <br />
 
 ![NSG11](https://github.com/user-attachments/assets/780fa656-d5d7-4f4e-b2c9-bdf1ddee85c4)
+
+</p>
+<p>
+para here
+</p>
+<br />
