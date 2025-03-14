@@ -25,7 +25,7 @@ This section outlines the processes in installing and checking on Network Activi
 
 
   
-<h2>Installation Steps</h2>
+<h2>Steps</h2>
 
 <p>
 
@@ -34,18 +34,51 @@ This section outlines the processes in installing and checking on Network Activi
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+-Connect to Windows 10 VM: Use Remote Desktop to access your Windows 10 Virtual Machine.
+-Install Wireshark: Download and install Wireshark within your Windows 10 VM.
+-Start Packet Capture: Open Wireshark, select your active network interface, and start packet capture.
+-Filter for ICMP Traffic: In the Wireshark filter bar, enter icmp and press Enter to display only ICMP traffic.
+-Ping Ubuntu VM: Retrieve the private IP of your Ubuntu VM (Linux-VM) and initiate a ping from Windows 10 VM using: ping <10.0.0.5>
+  
 </p>
 <br />
 
 <p>
 
+![NSG4](https://github.com/user-attachments/assets/dbccb7d8-841a-4d26-b8c7-627703764ec5)
+
+![NSG5-5](https://github.com/user-attachments/assets/ccd60c94-7686-46b4-9c20-bd4a9f0b6075)
+
+</p>
+
+<h2>Step 2: Configuring a Firewall (Network Security Group) to Block ICMP Traffic</h2>
+
+<p>
+Initiate a Continuous Ping: Start a continuous ping from the Windows 10 VM in Powershell to the Ubuntu VM to observe traffic in real-time:
+ping <10.0.0.5> -t
+Modify the Network Security Group (NSG) through Azure:
+Locate the inbound rules and disable ICMP (ping) traffic by blocking ICMP packets.
+Observe Changes in Wireshark & Ping Output:
+In Wireshark, notice that ICMP requests are sent, but there are no replies.
+In the Command Prompt/PowerShell, you should see Request Timed Out messages.
+Re-enable ICMP Traffic:
+Go back to the Ubuntu VM's NSG and allow inbound ICMP traffic again.
+Verify ICMP is Working Again:
+In Wireshark, you should now see ICMP replies appearing again.
+In Command Prompt/PowerShell, the ping responses should resume.
+Stop Ping Activity: Use Ctrl + C to stop the ongoing ping test.
+</p>
+<br />
+
+<p>
+
+
 ![NSG7](https://github.com/user-attachments/assets/e160d5ed-b661-42d7-8624-588926338106)
 
 
-</p>
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+inaert here
 </p>
 <br />
 
@@ -56,7 +89,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+para here
 </p>
 <br />
 
@@ -66,7 +99,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+para here
 </p>
 <br />
 
